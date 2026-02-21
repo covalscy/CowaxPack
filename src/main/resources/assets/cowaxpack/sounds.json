@@ -1,0 +1,58 @@
+{
+  "zenit_2c6_fire_1p": {
+    "sounds": [
+      {
+        "name": "cowaxpack:shoot_30m",
+        "stream": false
+      },
+      {
+        "name": "cowaxpack:shoot2_30mm",
+        "stream": false
+      }
+    ]
+  },
+  "zenit_2c6_fire_3p": {
+    "sounds": [
+      {
+        "name": "cowaxpack:shoot_30m",
+        "stream": false
+      },
+      {
+        "name": "cowaxpack:shoot2_30mm",
+        "stream": false
+      }
+    ]
+  },
+  "shoot_30m": {
+    "sounds": [
+      {
+        "name": "cowaxpack:shoot_30m",
+        "stream": false
+      }
+    ]
+  },
+  "shoot2_30mm": {
+    "sounds": [
+      {
+        "name": "cowaxpack:shoot2_30mm",
+        "stream": false
+      }
+    ]
+  },
+  "parachute_open": {
+    "sounds": [
+      {
+        "name": "superbwarfare:parachute_open",
+        "stream": false
+      }
+    ]
+  },
+  "parachute_close": {
+    "sounds": [
+      {
+        "name": "superbwarfare:parachute_close",
+        "stream": false
+      }
+    ]
+  }
+}

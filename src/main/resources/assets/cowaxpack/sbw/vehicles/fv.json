@@ -1,0 +1,15 @@
+{
+    "ID": "cowaxpack:fv",
+    "Model": {
+        "Model": "cowaxpack:geo/fv.geo.json",
+        "Texture": "cowaxpack:textures/entity/fv.png",
+        "LODModel": [
+            "cowaxpack:geo/vehicle_lod/fv_lod1.geo.json",
+            "cowaxpack:geo/vehicle_lod/fv_lod2.geo.json"
+        ]
+    },
+    "LODDistance": [
+        48.0,
+        96.0
+    ]
+}

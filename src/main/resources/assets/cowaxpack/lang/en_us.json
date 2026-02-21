@@ -1,0 +1,19 @@
+{
+  "item_group.cowaxpack.title": "CowaxPack",
+  "item.cowaxpack.parachute": "Parachute",
+  "item.cowaxpack.medical_kit": "Medical Kit",
+  "des.cowaxpack.medical_kit": "Right-click while sneaking to throw it, hold right mouse button to heal when health is not full",
+  "entity.cowaxpack.zenit_2c6": "2C6 Zenitka",
+  "entity.cowaxpack.medical_kit": "Medical Kit",
+  "superbwarfare.entry.vehicle.zenit_2c6": "2C6 Zenitka",
+  "superbwarfare.page.vehicle.zenit_2c6_1": "The 2C6 Zenitka is a self-propelled anti-aircraft gun system with dual 30mm cannons and ATGM capabilities. It can carry 2 crew members and provides excellent air defense.",
+  "superbwarfare.page.vehicle.zenit_2c6_2": "Requires at least 4 x 3 x 3 space to place.",
+  "superbwarfare.page.vehicle.zenit_2c6_3": "Basic Properties: Health - 180, Max Crew - 5, Step Height - 2.25m, Max Energy - 3,500,000FE, Energy Cost - 45FE/tick, Enclosed Vehicle (driver & commander)",
+  "superbwarfare.page.vehicle.zenit_2c6_4": "Weapon Properties: Position 0: (1) Dual 30mm Cannons (4 shells per burst), Rate of Fire - 240RPM, Damage per shell - 10, Ammo - Small Shells, (2) ATGM Launcher, Rate of Fire - 200RPM, Damage - 217, Explosion Damage - 20, Explosion Radius - 2.7m, Ammo - Wire Guide Missiles. Position 1: ATGM Launcher only.",
+  "superbwarfare.page.vehicle.zenit_2c6_5": "Special Features: Manual ATGM loading by right-clicking with Wire Guide Missiles, Maximum 8 ATGMs, No automatic ATGM reloading",
+  "cowaxpack.weapon.30mm_cannon": "30MM CANNON",
+  "cowaxpack.weapon.atgm": "ATGM",
+  "cowaxpack.message.atgm_loaded": "ATGM loaded! Loaded: %d/8",
+  "cowaxpack.message.atgm_load_cooldown": "Load cooldown: %.1f sec",
+  "item.cowaxpack.iff": "IFF System"
+}

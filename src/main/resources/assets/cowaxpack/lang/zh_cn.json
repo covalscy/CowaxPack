@@ -1,0 +1,17 @@
+{
+  "item_group.cowaxpack.title": "CowaxPack",
+  "item.cowaxpack.medical_kit": "医疗包",
+  "des.cowaxpack.medical_kit": "潜行使用以丢出，在生命值未满的情况下长按使用以治疗",
+  "entity.cowaxpack.zenit_2c6": "2C6 通古斯卡",
+  "entity.cowaxpack.medical_kit": "医疗包",
+  "superbwarfare.entry.vehicle.zenit_2c6": "2C6 通古斯卡",
+  "superbwarfare.page.vehicle.zenit_2c6_1": "$(thing)2C6 通古斯卡$()是一款自行防空炮系统，配备双联30mm机炮和反坦克导弹发射器。可搭载5名乘员，提供出色的防空能力。",
+  "superbwarfare.page.vehicle.zenit_2c6_2": "需要至少 4 x 3 x 3 的空间放置。",
+  "superbwarfare.page.vehicle.zenit_2c6_3": "$(l)基础属性：$()$(p)耐久值 - 180$(br)最大乘员数 - 5$(br)爬坡高度 - 2.25m$(br)最大能量 - 3,500,000FE$(br)能耗 - 45FE/tick$(br)封闭载具（驾驶员和指挥官）",
+  "superbwarfare.page.vehicle.zenit_2c6_4": "$(l)武器属性：$()$(br)0号位（驾驶员）：$(br)(1) 双联30mm机炮（每次射击4发）$(br)射速 - 240RPM$(br)单发伤害 - 10$(br)弹药 - $(item)小口径炮弹$()$(br)(2) 反坦克导弹发射器$(br)射速 - 200RPM$(br)直击伤害 - 217$(br)爆炸伤害 - 20$(br)爆炸半径 - 2.7m$(br)弹药 - $(item)线导导弹$()$(br)1号位（指挥官）：仅有反坦克导弹发射器",
+  "superbwarfare.page.vehicle.zenit_2c6_5": "$(l)特殊功能：$()$(p)手动装填反坦克导弹（右键点击线导导弹），最多携带8枚导弹，无自动装填功能",
+  "cowaxpack.weapon.30mm_cannon": "30MM 机炮",
+  "cowaxpack.weapon.atgm": "反坦克导弹",
+  "cowaxpack.message.atgm_loaded": "反坦克导弹已装填！已装填：%d/8",
+  "cowaxpack.message.atgm_load_cooldown": "装填冷却：%.1f 秒"
+}
