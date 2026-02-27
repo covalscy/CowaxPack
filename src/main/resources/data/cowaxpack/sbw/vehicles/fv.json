@@ -111,7 +111,7 @@
         -60,
         10
     ],
-    "GunControllerIndex": 1,
+    "PassengerWeaponStationControllerIndex": 1,
     "Weapons": {
         "Main": {
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",

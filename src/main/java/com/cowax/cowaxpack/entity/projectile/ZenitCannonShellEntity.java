@@ -18,6 +18,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -84,6 +85,18 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
         super.onHitBlock(blockHitResult);
         BlockPos resultPos = blockHitResult.getBlockPos();
         BlockState state = this.level().getBlockState(resultPos);
+
+        // Пробитие мягкой растительности: снаряд ломает листву и брёвна, не взрываясь об них.
+        if (state.is(BlockTags.LEAVES)
+                || state.is(BlockTags.LOGS)
+                || state.is(BlockTags.FENCES)
+                || state.is(BlockTags.FENCE_GATES)
+                || state.is(BlockTags.WOODEN_DOORS)) {
+            if (this.level() instanceof ServerLevel serverLevel) {
+                serverLevel.destroyBlock(resultPos, false, this);
+            }
+            return;
+        }
 
         if (state.getBlock() instanceof BellBlock bell) {
             bell.attemptToRing(this.level(), resultPos, blockHitResult.getDirection());

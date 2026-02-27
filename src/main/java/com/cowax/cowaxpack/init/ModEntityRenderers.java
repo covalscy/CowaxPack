@@ -1,6 +1,5 @@
 package com.cowax.cowaxpack.init;
 
-import com.cowax.cowaxpack.client.model.curio.ParachuteModel;
 import com.cowax.cowaxpack.client.renderer.entity.MedicalKitEntityRenderer;
 import com.cowax.cowaxpack.client.renderer.entity.FvRenderer;
 import com.cowax.cowaxpack.client.renderer.entity.Zenit_2C6Renderer;
@@ -21,9 +20,4 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.FV.get(), FvRenderer::new);
         }
 
-    @SubscribeEvent
-    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(ParachuteModel.LAYER_LOCATION, ParachuteModel::createBodyLayer);
-    }
 }
-

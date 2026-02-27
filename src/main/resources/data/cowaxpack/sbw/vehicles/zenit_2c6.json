@@ -170,7 +170,7 @@
         -60,
         10
     ],
-    "GunControllerIndex": 1,
+    "PassengerWeaponStationControllerIndex": 1,
     "Weapons": {
         "Cannon": {
             "DefaultFireMode": "Auto",
