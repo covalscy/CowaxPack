@@ -33,6 +33,7 @@ import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -91,7 +92,12 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
                 || state.is(BlockTags.LOGS)
                 || state.is(BlockTags.FENCES)
                 || state.is(BlockTags.FENCE_GATES)
-                || state.is(BlockTags.WOODEN_DOORS)) {
+                || state.is(BlockTags.WOODEN_DOORS)
+                || state.is(BlockTags.WOODEN_STAIRS)
+                || state.is(BlockTags.WOODEN_SLABS)
+                || state.is(BlockTags.PLANKS)
+                || state.is(Tags.Blocks.GLASS)
+                || state.is(Tags.Blocks.GLASS_PANES)) {
             if (this.level() instanceof ServerLevel serverLevel) {
                 serverLevel.destroyBlock(resultPos, false, this);
             }
