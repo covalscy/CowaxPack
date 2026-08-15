@@ -27,6 +27,17 @@ public class Zenit_2C6Entity extends GeoVehicleEntity {
         super.baseTick();
     }
 
+    @Override
+    public net.minecraft.world.InteractionResult interact(net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand) {
+        net.minecraft.world.InteractionResult result = super.interact(player, hand);
+        if (result == net.minecraft.world.InteractionResult.PASS && !player.isShiftKeyDown() && this.canAddPassenger(player)) {
+            if (player.level().isClientSide()) {
+                return net.minecraft.world.InteractionResult.sidedSuccess(true);
+            }
+        }
+        return result;
+    }
+
     private PlayState cannonShootPredicate(AnimationState<Zenit_2C6Entity> event) {
         if (getShootAnimationTimer(0, 0) > 0) {
             return event.setAndContinue(RawAnimation.begin().thenPlay("animation.2c6.fire"));

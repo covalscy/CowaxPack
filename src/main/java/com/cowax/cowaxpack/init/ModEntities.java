@@ -16,7 +16,7 @@ public class ModEntities {
 
     public static final DeferredHolder<EntityType<?>, EntityType<Zenit_2C6Entity>> ZENIT_2C6 = register("zenit_2c6",
             EntityType.Builder.<Zenit_2C6Entity>of(Zenit_2C6Entity::new, MobCategory.MISC)
-                    .setTrackingRange(64)
+                    .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
@@ -24,7 +24,7 @@ public class ModEntities {
 
     public static final DeferredHolder<EntityType<?>, EntityType<FvEntity>> FV = register("fv",
             EntityType.Builder.<FvEntity>of(FvEntity::new, MobCategory.MISC)
-                    .setTrackingRange(64)
+                    .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
