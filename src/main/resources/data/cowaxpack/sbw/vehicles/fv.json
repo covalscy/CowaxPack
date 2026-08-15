@@ -113,7 +113,7 @@
             "Gravity": 0.06,
             "Damage": 750,
             "ExplosionDamage": 1060,
-            "ExplosionRadius": 20,
+            "ExplosionRadius": 18,
             "RecoilTime": 56,
             "RecoilForce": 1.6,
             "ShootShake": [
