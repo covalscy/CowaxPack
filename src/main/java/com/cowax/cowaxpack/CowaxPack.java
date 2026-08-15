@@ -1,5 +1,6 @@
 package com.cowax.cowaxpack;
 
+import com.atsuishio.superbwarfare.api.event.RegisterContainersEvent;
 import com.cowax.cowaxpack.init.CowaxSounds;
 import com.cowax.cowaxpack.init.ModEntities;
 import com.cowax.cowaxpack.init.ModItems;
@@ -28,6 +29,7 @@ public class CowaxPack {
 
         bus.addListener(this::commonSetup);
         bus.addListener(this::registerPayloads);
+        bus.addListener(this::registerContainers);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -41,6 +43,11 @@ public class CowaxPack {
                 ParachuteMessage.STREAM_CODEC,
                 ParachuteMessage::handle
         );
+    }
+
+    private void registerContainers(final RegisterContainersEvent event) {
+        event.add(ModEntities.ZENIT_2C6);
+        event.add(ModEntities.FV);
     }
 
     public static ResourceLocation loc(String path) {
