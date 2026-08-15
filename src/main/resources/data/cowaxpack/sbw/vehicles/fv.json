@@ -35,6 +35,9 @@
                 0.83,
                 0.73
             ],
+            "CameraPos": {
+                "Direction": "Barrel"
+            },
             "CanRotateHead": false,
             "MinPitch": -10,
             "MaxPitch": 30,
@@ -64,6 +67,9 @@
                 1,
                 1
             ],
+            "CameraPos": {
+                "Direction": "Barrel"
+            },
             "CanRotateHead": false,
             "DismountInfo": {
                 "Transform": "Vehicle",
