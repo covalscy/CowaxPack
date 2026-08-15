@@ -1,7 +1,7 @@
 {
     "ID": "cowaxpack:fv",
     "MaxHealth": 500,
-    "MaxEnergy": 500000,
+    "MaxEnergy": 10000000,
     "TurretPos": [
         0.00046875,
         2.03,
@@ -36,17 +36,11 @@
                 0.73
             ],
             "CameraPos": {
-                "Transform": "Barrel",
-                "ZoomPosition": [
-                    0,
-                    0,
-                    0
-                ],
                 "Direction": "Barrel"
             },
             "CanRotateHead": false,
-            "MinPitch": -7.5,
-            "MaxPitch": 74,
+            "MinPitch": -10,
+            "MaxPitch": 30,
             "Weapons": [
                 "Main",
                 "MachineGun"
@@ -74,13 +68,7 @@
                 1
             ],
             "CameraPos": {
-                "Transform": "WeaponStationBarrel",
-                "ZoomPosition": [
-                    0,
-                    0,
-                    0
-                ],
-                "Direction": "WeaponStationBarrel"
+                "Direction": "Barrel"
             },
             "CanRotateHead": false,
             "DismountInfo": {
@@ -125,7 +113,7 @@
             "Gravity": 0.06,
             "Damage": 750,
             "ExplosionDamage": 1060,
-            "ExplosionRadius": 16,
+            "ExplosionRadius": 20,
             "RecoilTime": 56,
             "RecoilForce": 1.6,
             "ShootShake": [
@@ -232,24 +220,36 @@
     "Mass": 1.0,
     "HasDecoy": false,
     "DamageModifiers": [
-        "minecraft:arrow * 0.1",
-        "minecraft:trident * 0.2",
-        "minecraft:mob_attack * 0.3",
-        "minecraft:mob_attack_no_aggro * 0.3",
-        "minecraft:mob_projectile * 0.2",
-        "minecraft:player_attack * 0.2",
-        "minecraft:lava - -10",
-        "minecraft:lava * 2.6",
-        "@minecraft:tnt * 3",
-        "@minecraft:tnt_minecart * 3",
-        "minecraft:explosion * 3.5",
-        "minecraft:player_explosion * 3.5",
-        "superbwarfare:projectile_hit * 0.6",
-        "superbwarfare:grapeshot_hit * 0.5",
-        "#superbwarfare:projectile * 0.03",
-        "#superbwarfare:projectile_absolute * 0.3",
-        "superbwarfare:vehicle_strike * 2",
-        "All * 0.85"
+        "All - 15",
+        "minecraft:lava + 15",
+        "minecraft:lava * 8.33",
+        "@minecraft:tnt * 5",
+        "@minecraft:tnt_minecart * 5",
+        "minecraft:arrow 0",
+        "minecraft:trident 0",
+        "minecraft:mob_attack 0",
+        "minecraft:mob_attack_no_aggro 0",
+        "minecraft:mob_projectile 0",
+        "minecraft:player_attack 0",
+        "@#superbwarfare:aerial_bomb * 12",
+        "#superbwarfare:projectile 0",
+        "All * 0.24",
+        "superbwarfare:vehicle_strike * 2.5",
+        "minecraft:explosion * 2.3",
+        "superbwarfare:custom_explosion * 0.72",
+        "superbwarfare:projectile_explosion * 0.72",
+        "superbwarfare:mine * 0.65",
+        "superbwarfare:lunge_mine * 0.75",
+        "superbwarfare:projectile_hit * 1.34",
+        "superbwarfare:grapeshot_hit * 0.12",
+        "#superbwarfare:projectile_absolute * 0.18",
+        "@#superbwarfare:aa_missile * 0.3",
+        "@superbwarfare:small_cannon_shell * 0.29",
+        "@superbwarfare:c4 * 4",
+        "@#superbwarfare:at_rocket * 1.4",
+        "@superbwarfare:gun_grenade * 1.45",
+        "@superbwarfare:mortar_shell * 1.45",
+        "@superbwarfare:tm_62 * 2.8"
     ],
     "DestroyInfo": {
         "ParticleType": "Large",
@@ -361,7 +361,7 @@
                 0,
                 3.202063
             ],
-            "Part": "Barrel",
+            "Part": "Turret",
             "Transform": "Barrel",
             "Rotation": "Barrel"
         }

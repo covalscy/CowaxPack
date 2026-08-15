@@ -25,8 +25,8 @@ ext {
     mod_name = 'CowaxPack'
     mod_license = 'GPL-3.0'
     mod_version = '1.1.0'
-    mod_authors = 'Cowax, Covalscy'
-    mod_description = 'Military addon for SuperbWarfare (CowaxMC)'
+    mod_authors = 'Covalscy'
+    mod_description = 'CowaxPack Addon for Superb Warfare'
 }
 
 group = 'com.cowax.cowaxpack'
