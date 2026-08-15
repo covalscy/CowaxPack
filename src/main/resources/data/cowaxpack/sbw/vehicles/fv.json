@@ -45,8 +45,8 @@
                 "Direction": "Barrel"
             },
             "CanRotateHead": false,
-            "MinPitch": -7.5,
-            "MaxPitch": 74,
+            "MinPitch": -10,
+            "MaxPitch": 30,
             "Weapons": [
                 "Main",
                 "MachineGun"
