@@ -111,36 +111,23 @@ repositories {
             includeGroup "me.shedaniel.cloth"
         }
     }
+    maven {
+        name = 'KotlinForForge'
+        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        content {
+            includeGroup "thedarkcolour"
+        }
+    }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
-    // runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1")
-    // compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1:api")
-
-    
-    // implementation("com.eliotlash.mclib:mclib:20")
-
-    // JEI related
-    // compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:15.20.0.106"))
-    // compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:15.20.0.106"))
-    // runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:15.20.0.106"))
-
-    // Cloth Config
-    
-    // implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.106")
-    
-    // SuperbWarfare dependency
-    // NOTE: SuperbWarfare has mixin issues in dev environment
-    // For runClient: manually place SuperbWarfare jar in run/mods/ folder
-    // For production: it will be included as runtime dependency
-    
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
+    implementation fg.deobf("thedarkcolour:kotlinforforge:4.11.0")
     implementation fg.deobf("curse.maven:geckolib-388172:7025129")
     implementation fg.deobf("curse.maven:curios-309927:6418456")
     
-    // SuperbWarfare - compileOnly to avoid mixin conflicts in dev
+    // SuperbWarfare
     implementation fg.deobf("curse.maven:superb-warfare-1218165:8104849")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
