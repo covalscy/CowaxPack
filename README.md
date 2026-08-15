@@ -16,7 +16,7 @@
 
 * **💥 FV4005 Stage II (Heavy Tank Destroyer)**:
   * British heavy siege tank destroyer equipped with the colossal **183mm QF L4 Gun**.
-  * **Devastating Firepower:** Huge direct impact and high-explosive blast damage covering a **20-block explosion radius**.
+  * **Devastating Firepower:** Huge direct impact and high-explosive blast damage covering an **18-block explosion radius**.
   * **Tactical Balance:** Heavy ballistic trajectory, slow turret traverse rate, and a 35-second reload cycle tailored for high-risk, high-reward tactical engagements.
   * **Armor & Protection:** Multi-segment Oriented Bounding Box (OBB) hitboxes with angle-based armor penetration mechanics.
 
