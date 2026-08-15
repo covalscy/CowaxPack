@@ -38,7 +38,13 @@ public class CowaxPack {
         ModTabs.TABS.register(bus);
 
         bus.addListener(this::commonSetup);
+        bus.addListener(this::registerContainers);
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void registerContainers(final com.atsuishio.superbwarfare.api.event.RegisterContainersEvent event) {
+        event.add(ModEntities.ZENIT_2C6);
+        event.add(ModEntities.FV);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
