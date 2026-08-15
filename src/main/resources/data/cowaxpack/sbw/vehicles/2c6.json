@@ -454,7 +454,7 @@
                 1.55,
                 -3.525
             ],
-            "Part": "Engine1"
+            "Part": "MainEngine"
         },
         {
             "Size": [
@@ -482,7 +482,7 @@
                 0,
                 0
             ],
-            "Part": "Barrel",
+            "Part": "Turret",
             "Transform": "Barrel",
             "Rotation": "Barrel"
         },
@@ -497,7 +497,7 @@
                 0,
                 0
             ],
-            "Part": "Barrel",
+            "Part": "Turret",
             "Transform": "Barrel",
             "Rotation": "Barrel"
         }
