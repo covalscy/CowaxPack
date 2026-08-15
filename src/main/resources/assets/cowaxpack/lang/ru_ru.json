@@ -1,10 +1,7 @@
 {
   "item_group.cowaxpack.title": "CowaxPack",
   "item.cowaxpack.parachute": "Парашют",
-  "item.cowaxpack.medical_kit": "Аптечка",
-  "des.cowaxpack.medical_kit": "Щелкните правой кнопкой мыши во время подкрадывания, чтобы бросить её, удерживая правую кнопку мыши, чтобы вылечить, когда здоровье не заполнено",
   "entity.cowaxpack.zenit_2c6": "2С6 Тунгуска",
-  "entity.cowaxpack.medical_kit": "Аптечка",
   "superbwarfare.entry.vehicle.zenit_2c6": "2С6 Тунгуска",
   "superbwarfare.page.vehicle.zenit_2c6_1": "$(thing)2С6 Тунгуска$() - это зенитный ракетно-пушечный комплекс с двумя 30мм пушками и возможностью запуска ПТУР. Может перевозить 5 членов экипажа и обеспечивает отличную противовоздушную оборону.",
   "superbwarfare.page.vehicle.zenit_2c6_2": "Требует минимум 4 x 3 x 3 пространства для размещения.",
@@ -14,6 +11,5 @@
   "cowaxpack.weapon.30mm_cannon": "30ММ ПУШКА",
   "cowaxpack.weapon.atgm": "ПТУР",
   "cowaxpack.message.atgm_loaded": "ПТУР загружен! Загружено: %d/8",
-  "cowaxpack.message.atgm_load_cooldown": "Кулдаун загрузки: %.1f сек",
-  "item.cowaxpack.iff": "Система \"Свой-Чужой\""
+  "cowaxpack.message.atgm_load_cooldown": "Кулдаун загрузки: %.1f сек"
 }

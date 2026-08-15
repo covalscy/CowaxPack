@@ -1,9 +1,8 @@
 package com.cowax.cowaxpack.init;
 
 import com.cowax.cowaxpack.CowaxPack;
-import com.cowax.cowaxpack.entity.MedicalKitEntity;
-import com.cowax.cowaxpack.entity.Zenit_2C6Entity;
 import com.cowax.cowaxpack.entity.FvEntity;
+import com.cowax.cowaxpack.entity.Zenit_2C6Entity;
 import com.cowax.cowaxpack.entity.projectile.ZenitCannonShellEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -23,7 +22,8 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-public static final RegistryObject<EntityType<FvEntity>> FV = register("fv",
+
+    public static final RegistryObject<EntityType<FvEntity>> FV = register("fv",
             EntityType.Builder.<FvEntity>of(FvEntity::new, MobCategory.MISC)
                     .setTrackingRange(64)
                     .setUpdateInterval(1)
@@ -31,8 +31,6 @@ public static final RegistryObject<EntityType<FvEntity>> FV = register("fv",
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<MedicalKitEntity>> MEDICAL_KIT = register("medical_kit",
-            EntityType.Builder.of(MedicalKitEntity::new, MobCategory.MISC).setTrackingRange(64).setUpdateInterval(1).sized(0.4f, 0.2f));
 
     public static final RegistryObject<EntityType<ZenitCannonShellEntity>> ZENIT_CANNON_SHELL = register("zenit_cannon_shell",
             EntityType.Builder.<ZenitCannonShellEntity>of(ZenitCannonShellEntity::new, MobCategory.MISC)

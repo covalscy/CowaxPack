@@ -1,9 +1,6 @@
 {
   "item_group.cowaxpack.title": "CowaxPack",
-  "item.cowaxpack.medical_kit": "医疗包",
-  "des.cowaxpack.medical_kit": "潜行使用以丢出，在生命值未满的情况下长按使用以治疗",
   "entity.cowaxpack.zenit_2c6": "2C6 通古斯卡",
-  "entity.cowaxpack.medical_kit": "医疗包",
   "superbwarfare.entry.vehicle.zenit_2c6": "2C6 通古斯卡",
   "superbwarfare.page.vehicle.zenit_2c6_1": "$(thing)2C6 通古斯卡$()是一款自行防空炮系统，配备双联30mm机炮和反坦克导弹发射器。可搭载5名乘员，提供出色的防空能力。",
   "superbwarfare.page.vehicle.zenit_2c6_2": "需要至少 4 x 3 x 3 的空间放置。",

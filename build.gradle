@@ -23,10 +23,10 @@ ext {
     loader_version_range = '[47,)'
     mod_id = 'cowaxpack'
     mod_name = 'CowaxPack'
-    mod_license = 'All Rights Reserved'
+    mod_license = 'GPL-3.0'
     mod_version = '1.1.0'
-    mod_authors = 'Atsuishio'
-    mod_description = 'Modification for CowaxMC'
+    mod_authors = 'Cowax, Covalscy'
+    mod_description = 'Military addon for SuperbWarfare (CowaxMC)'
 }
 
 group = 'com.cowax.cowaxpack'

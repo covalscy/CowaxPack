@@ -18,13 +18,8 @@ public class ModTabs {
                     .title(Component.translatable("item_group.cowaxpack.title"))
                     .icon(() -> new ItemStack(ModItems.CONTAINER.get()))
                     .displayItems((param, output) -> {
-                                // В SuperbWarfare 0.8.9 класс ContainerBlockItem переехал,
-                                // поэтому избегаем прямой зависимости от его пакета.
                                 output.accept(ModItems.CONTAINER.get());
                                 output.accept(com.cowax.cowaxpack.init.ModItems.PARACHUTE.get());
-                                output.accept(com.cowax.cowaxpack.init.ModItems.MEDICAL_KIT.get());
-                                output.accept(com.cowax.cowaxpack.init.ModItems.IFF.get());
-                                // output.accept(com.cowax.cowaxpack.init.ModItems.ARTILLERY_INDICATOR.get());
                             }
                     )
                     .build());

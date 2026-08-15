@@ -1,10 +1,7 @@
 {
   "item_group.cowaxpack.title": "CowaxPack",
   "item.cowaxpack.parachute": "Parachute",
-  "item.cowaxpack.medical_kit": "Medical Kit",
-  "des.cowaxpack.medical_kit": "Right-click while sneaking to throw it, hold right mouse button to heal when health is not full",
   "entity.cowaxpack.zenit_2c6": "2C6 Zenitka",
-  "entity.cowaxpack.medical_kit": "Medical Kit",
   "superbwarfare.entry.vehicle.zenit_2c6": "2C6 Zenitka",
   "superbwarfare.page.vehicle.zenit_2c6_1": "The 2C6 Zenitka is a self-propelled anti-aircraft gun system with dual 30mm cannons and ATGM capabilities. It can carry 2 crew members and provides excellent air defense.",
   "superbwarfare.page.vehicle.zenit_2c6_2": "Requires at least 4 x 3 x 3 space to place.",
@@ -14,6 +11,5 @@
   "cowaxpack.weapon.30mm_cannon": "30MM CANNON",
   "cowaxpack.weapon.atgm": "ATGM",
   "cowaxpack.message.atgm_loaded": "ATGM loaded! Loaded: %d/8",
-  "cowaxpack.message.atgm_load_cooldown": "Load cooldown: %.1f sec",
-  "item.cowaxpack.iff": "IFF System"
+  "cowaxpack.message.atgm_load_cooldown": "Load cooldown: %.1f sec"
 }
