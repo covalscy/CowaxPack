@@ -1,17 +1,14 @@
 package com.cowax.cowaxpack.entity.projectile;
 
-import com.atsuishio.superbwarfare.config.server.ExplosionConfig;
 import com.atsuishio.superbwarfare.entity.projectile.DestroyableProjectile;
 import com.atsuishio.superbwarfare.entity.projectile.FastThrowableProjectile;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.init.ModSounds;
-import com.atsuishio.superbwarfare.network.NetworkRegistry;
 import com.atsuishio.superbwarfare.network.message.receive.ClientIndicatorMessage;
 import com.atsuishio.superbwarfare.network.message.receive.ClientMotionSyncMessage;
 import com.atsuishio.superbwarfare.tools.CustomExplosion;
 import com.atsuishio.superbwarfare.tools.DamageHandler;
-import com.atsuishio.superbwarfare.tools.ParticleTool;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -19,7 +16,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -33,12 +29,12 @@ import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -53,9 +49,9 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
     public ZenitCannonShellEntity(EntityType<? extends ZenitCannonShellEntity> type, Level level) {
         super(type, level);
         this.noCulling = true;
-        this.damage = 40f;
-        this.explosionDamage = 80f;
-        this.explosionRadius = 5f;
+        this.setDamageValue(40f);
+        this.setExplosionDamageValue(80f);
+        this.setExplosionRadiusValue(5f);
     }
 
     @Override
@@ -66,7 +62,7 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
 
     @Override
     protected @NotNull Item getDefaultItem() {
-        return ModItems.SMALL_SHELL.get();
+        return ModItems.SMALL_SHELL_AA.get();
     }
 
     @Override
@@ -96,7 +92,7 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
                 || state.is(BlockTags.WOODEN_STAIRS)
                 || state.is(BlockTags.WOODEN_SLABS)
                 || state.is(BlockTags.PLANKS)
-                || state.is(Tags.Blocks.GLASS)
+                || state.is(Tags.Blocks.GLASS_BLOCKS)
                 || state.is(Tags.Blocks.GLASS_PANES)) {
             if (this.level() instanceof ServerLevel serverLevel) {
                 serverLevel.destroyBlock(resultPos, false, this);
@@ -121,7 +117,7 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
         if (this.getOwner() != null && this.getOwner().getVehicle() != null && entity == this.getOwner().getVehicle())
             return;
         if (this.level() instanceof ServerLevel) {
-            DamageHandler.doDamage(entity, ModDamageTypes.causeProjectileHitDamage(this.level().registryAccess(), this, this.getOwner()), damage);
+            DamageHandler.doDamage(entity, ModDamageTypes.causeProjectileHitDamage(this.level().registryAccess(), this, this.getOwner()), getDamageValue());
 
             if (entity instanceof LivingEntity) {
                 entity.invulnerableTime = 0;
@@ -143,10 +139,10 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
     private void causeExplode(Vec3 vec3, boolean hitEntity) {
         new CustomExplosion.Builder(this)
                 .attacker(this.getOwner())
-                .damage(explosionDamage)
-                .radius(explosionRadius)
+                .damage(getExplosionDamageValue())
+                .radius(getExplosionRadiusValue())
                 .position(vec3)
-                .withParticleType(explosionParticleType(explosionRadius))
+                .withParticleType(explosionParticleType(getExplosionRadiusValue()))
                 // В этом паке снаряд НИКОГДА не ломает блоки
                 .destroyBlock(() -> Explosion.BlockInteraction.KEEP)
                 .damageMultiplier(1.25F)
@@ -181,10 +177,10 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
                     if (this.getOwner() instanceof LivingEntity living) {
                         if (!living.level().isClientSide() && living instanceof ServerPlayer player) {
                             living.level().playSound(null, living.blockPosition(), ModSounds.INDICATION.get(), SoundSource.VOICE, 1, 1);
-                            NetworkRegistry.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new ClientIndicatorMessage(0, 5));
+                            PacketDistributor.sendToPlayer(player, new ClientIndicatorMessage(0, 5));
                         }
                     }
-                    DamageHandler.doDamage(destroyableProjectile, ModDamageTypes.causeProjectileHitDamage(this.level().registryAccess(), this, this.getOwner()), damage);
+                    DamageHandler.doDamage(destroyableProjectile, ModDamageTypes.causeProjectileHitDamage(this.level().registryAccess(), this, this.getOwner()), getDamageValue());
                 } else {
                     target.get().discard();
                 }
@@ -197,7 +193,7 @@ public class ZenitCannonShellEntity extends FastThrowableProjectile implements G
     @Override
     public void syncMotion() {
         if (!this.level().isClientSide) {
-            NetworkRegistry.PACKET_HANDLER.send(PacketDistributor.TRACKING_ENTITY.with(() -> this), new ClientMotionSyncMessage(this));
+            PacketDistributor.sendToPlayersTrackingEntity(this, new ClientMotionSyncMessage(this));
         }
     }
 

@@ -12,7 +12,7 @@ import software.bernie.geckolib.renderer.GeoRenderer;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class ZenitCannonShellLayer extends GeoRenderLayer<ZenitCannonShellEntity> {
-    private static final ResourceLocation LAYER = new ResourceLocation("superbwarfare", "textures/entity/small_cannon_shell.png");
+    private static final ResourceLocation LAYER = ResourceLocation.fromNamespaceAndPath("superbwarfare", "textures/entity/small_cannon_shell.png");
 
     public ZenitCannonShellLayer(GeoRenderer<ZenitCannonShellEntity> entityRenderer) {
         super(entityRenderer);
@@ -21,6 +21,6 @@ public class ZenitCannonShellLayer extends GeoRenderLayer<ZenitCannonShellEntity
     @Override
     public void render(PoseStack poseStack, ZenitCannonShellEntity animatable, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
         RenderType glowRenderType = RenderType.eyes(LAYER);
-        getRenderer().reRender(getDefaultBakedModel(animatable), poseStack, bufferSource, animatable, glowRenderType, bufferSource.getBuffer(glowRenderType), partialTick, packedLight, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
+        getRenderer().reRender(getDefaultBakedModel(animatable), poseStack, bufferSource, animatable, glowRenderType, bufferSource.getBuffer(glowRenderType), partialTick, packedLight, OverlayTexture.NO_OVERLAY, 0xFFFFFFFF);
     }
 }

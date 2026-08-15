@@ -18,14 +18,15 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderLevelStageEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
-@net.minecraftforge.fml.common.Mod.EventBusSubscriber(bus = net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(modid = CowaxPack.MODID, value = Dist.CLIENT)
 public class ParachuteRenderer implements ICurioRenderer {
 
     private static ParachuteModel firstPersonModel;
@@ -44,14 +45,14 @@ public class ParachuteRenderer implements ICurioRenderer {
         matrixStack.scale(0.5f, 0.5f, 0.5f);
         matrixStack.translate(0, 0.25, 0);
 
-        if (stack.getOrCreateTag().getBoolean(ParachuteItem.TAG_OPEN)) {
+        if (ParachuteItem.isOpen(stack)) {
             LivingEntity entity = slotContext.entity();
             this.model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
             this.model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 
-            VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(renderTypeBuffer, RenderType.armorCutoutNoCull(TEXTURE), false, stack.hasFoil());
+            VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(renderTypeBuffer, RenderType.armorCutoutNoCull(TEXTURE), stack.hasFoil());
 
-            model.renderToBuffer(matrixStack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            model.renderToBuffer(matrixStack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 0xFFFFFFFF);
         }
 
         matrixStack.popPose();
@@ -63,23 +64,21 @@ public class ParachuteRenderer implements ICurioRenderer {
         var player = Minecraft.getInstance().player;
         if (player == null) return;
         if (!ParachuteItem.isParachuteOpen(player)) return;
-        
-        // Проверяем, что парашют НЕ в Curios слоте (чтобы избежать двойного рендеринга)
+
         boolean inCurios = CuriosApi.getCuriosInventory(player)
                 .map(c -> c.findFirstCurio(com.cowax.cowaxpack.init.ModItems.PARACHUTE.get())
-                        .map(slotResult -> slotResult.stack().getOrCreateTag().getBoolean(ParachuteItem.TAG_OPEN))
+                        .map(slotResult -> ParachuteItem.isOpen(slotResult.stack()))
                         .orElse(false)
                 ).orElse(false);
-        
-        if (inCurios) return; // Если в Curios, не рендерим здесь
-        
-        // Проверяем, что парашют в инвентаре и открыт
+
+        if (inCurios) return;
+
         boolean inInventory = player.getInventory().items.stream()
-                .anyMatch(stack -> stack.getItem() == com.cowax.cowaxpack.init.ModItems.PARACHUTE.get() && 
-                                 stack.getOrCreateTag().getBoolean(ParachuteItem.TAG_OPEN));
-        
+                .anyMatch(stack -> stack.getItem() == com.cowax.cowaxpack.init.ModItems.PARACHUTE.get() &&
+                        ParachuteItem.isOpen(stack));
+
         if (!inInventory) return;
-        
+
         PoseStack stack = event.getPoseStack();
 
         if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS) {
@@ -89,19 +88,17 @@ public class ParachuteRenderer implements ICurioRenderer {
                 firstPersonModel = new ParachuteModel(Minecraft.getInstance().getEntityModels().bakeLayer(ParachuteModel.LAYER_LOCATION));
             }
 
-            // Рендерим парашют для первого лица
             if (Minecraft.getInstance().options.getCameraType() == CameraType.FIRST_PERSON) {
-                // Позиционируем парашют в мировых координатах над игроком
                 stack.translate(player.getX() - event.getCamera().getPosition().x,
-                               player.getY() - event.getCamera().getPosition().y + 3.0,
-                               player.getZ() - event.getCamera().getPosition().z);
-                // Переворачиваем парашют правильной стороной вверх
+                        player.getY() - event.getCamera().getPosition().y + 3.0,
+                        player.getZ() - event.getCamera().getPosition().z);
                 stack.mulPose(Axis.ZP.rotationDegrees(180));
                 stack.scale(0.5f, 0.5f, 0.5f);
-                
-                firstPersonModel.prepareMobModel(player, 0, 0, event.getPartialTick());
+
+                float partialTick = event.getPartialTick().getGameTimeDeltaPartialTick(true);
+                firstPersonModel.prepareMobModel(player, 0, 0, partialTick);
                 firstPersonModel.setupAnim(player, 0, 0, player.tickCount, 0, 0);
-                firstPersonModel.renderToBuffer(stack, buffers.bufferSource().getBuffer(RenderType.armorCutoutNoCull(TEXTURE)), 0xFFFFFF, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+                firstPersonModel.renderToBuffer(stack, buffers.bufferSource().getBuffer(RenderType.armorCutoutNoCull(TEXTURE)), 0xFFFFFF, OverlayTexture.NO_OVERLAY, 0xFFFFFFFF);
             }
 
             stack.popPose();

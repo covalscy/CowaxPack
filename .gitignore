@@ -44,5 +44,3 @@ crash-reports/
 screenshots/
 saves/
 
-# Mod specific
-gradle.properties

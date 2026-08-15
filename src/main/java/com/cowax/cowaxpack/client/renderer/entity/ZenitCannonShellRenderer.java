@@ -27,10 +27,9 @@ public class ZenitCannonShellRenderer extends GeoEntityRenderer<ZenitCannonShell
     }
 
     @Override
-    public void preRender(PoseStack poseStack, ZenitCannonShellEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
-                          float blue, float alpha) {
+    public void preRender(PoseStack poseStack, ZenitCannonShellEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int color) {
         if (entity.tickCount > 0) {
-            super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+            super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, color);
         }
     }
 

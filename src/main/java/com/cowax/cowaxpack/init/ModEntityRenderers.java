@@ -1,14 +1,15 @@
 package com.cowax.cowaxpack.init;
 
+import com.cowax.cowaxpack.CowaxPack;
 import com.cowax.cowaxpack.client.renderer.entity.FvRenderer;
 import com.cowax.cowaxpack.client.renderer.entity.Zenit_2C6Renderer;
 import com.cowax.cowaxpack.client.renderer.entity.ZenitCannonShellRenderer;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = CowaxPack.MODID, value = Dist.CLIENT)
 public class ModEntityRenderers {
 
     @SubscribeEvent

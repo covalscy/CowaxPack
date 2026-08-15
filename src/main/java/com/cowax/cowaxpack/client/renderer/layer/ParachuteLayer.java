@@ -26,14 +26,13 @@ public class ParachuteLayer<T extends LivingEntity, M extends EntityModel<T>> ex
     @Override
     public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
         if (!ParachuteItem.isParachuteOpen(livingEntity)) return;
-        
-        // Рендерим только парашют из инвентаря (не из Curios)
+
         if (!(livingEntity instanceof net.minecraft.world.entity.player.Player player)) return;
-        
+
         boolean inInventory = player.getInventory().items.stream()
-                .anyMatch(stack -> stack.getItem() == com.cowax.cowaxpack.init.ModItems.PARACHUTE.get() && 
-                                 stack.getOrCreateTag().getBoolean(ParachuteItem.TAG_OPEN));
-        
+                .anyMatch(stack -> stack.getItem() == com.cowax.cowaxpack.init.ModItems.PARACHUTE.get() &&
+                        ParachuteItem.isOpen(stack));
+
         if (!inInventory) return;
 
         if (model == null) {
@@ -41,8 +40,7 @@ public class ParachuteLayer<T extends LivingEntity, M extends EntityModel<T>> ex
         }
 
         poseStack.pushPose();
-        
-        // Позиционируем парашют над игроком
+
         poseStack.translate(0, 0.5, 0);
         poseStack.scale(0.5f, 0.5f, 0.5f);
 
@@ -50,7 +48,7 @@ public class ParachuteLayer<T extends LivingEntity, M extends EntityModel<T>> ex
         model.setupAnim(livingEntity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 
         VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.armorCutoutNoCull(TEXTURE));
-        model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+        model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 0xFFFFFFFF);
 
         poseStack.popPose();
     }

@@ -1,0 +1,45 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mods]]
+modId = "cowaxpack"
+version = "${mod_version}"
+displayName = "CowaxPack"
+authors = "${mod_authors}"
+description = "${mod_description}"
+
+[[dependencies.cowaxpack]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neo_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cowaxpack]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cowaxpack]]
+modId = "superbwarfare"
+type = "required"
+versionRange = "[0.8.9,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cowaxpack]]
+modId = "geckolib"
+type = "required"
+versionRange = "[4.7.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cowaxpack]]
+modId = "curios"
+type = "optional"
+versionRange = "[9.0.0,)"
+ordering = "NONE"
+side = "BOTH"
