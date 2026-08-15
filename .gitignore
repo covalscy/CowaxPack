@@ -44,5 +44,8 @@ crash-reports/
 screenshots/
 saves/
 
+# Gemini / Antigravity
+.gemini/
+
 # Mod specific
 gradle.properties
