@@ -35,15 +35,6 @@
                 0.83,
                 0.73
             ],
-            "CameraPos": {
-                "Transform": "Barrel",
-                "ZoomPosition": [
-                    0,
-                    0,
-                    0
-                ],
-                "Direction": "Barrel"
-            },
             "CanRotateHead": false,
             "MinPitch": -10,
             "MaxPitch": 30,
@@ -73,15 +64,6 @@
                 1,
                 1
             ],
-            "CameraPos": {
-                "Transform": "WeaponStationBarrel",
-                "ZoomPosition": [
-                    0,
-                    0,
-                    0
-                ],
-                "Direction": "WeaponStationBarrel"
-            },
             "CanRotateHead": false,
             "DismountInfo": {
                 "Transform": "Vehicle",

@@ -43,15 +43,6 @@
                 0.83,
                 0.73
             ],
-            "CameraPos": {
-                "Transform": "Barrel",
-                "ZoomPosition": [
-                    0,
-                    0.4,
-                    0
-                ],
-                "Direction": "Barrel"
-            },
             "CanRotateHead": false,
             "MinPitch": -7.5,
             "MaxPitch": 74,
@@ -81,15 +72,6 @@
                 1,
                 1
             ],
-            "CameraPos": {
-                "Transform": "WeaponStationBarrel",
-                "ZoomPosition": [
-                    0,
-                    0.4,
-                    0
-                ],
-                "Direction": "WeaponStationBarrel"
-            },
             "CanRotateHead": false,
             "Weapons": [
                 "Missile"
