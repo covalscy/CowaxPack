@@ -14,10 +14,8 @@ public class ModTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCK_TAB = TABS.register("cowaxpack",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("item_group.cowaxpack.title"))
-                    .icon(() -> ModItems.ZENIT_2C6_SPAWN_ITEM.get().getDefaultInstance())
+                    .icon(() -> ContainerBlockItem.createInstance(ModEntities.ZENIT_2C6.get()))
                     .displayItems((param, output) -> {
-                                output.accept(ModItems.ZENIT_2C6_SPAWN_ITEM.get());
-                                output.accept(ModItems.FV_SPAWN_ITEM.get());
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.ZENIT_2C6.get()));
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.FV.get()));
                                 output.accept(ModItems.PARACHUTE.get());

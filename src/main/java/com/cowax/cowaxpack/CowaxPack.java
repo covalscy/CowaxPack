@@ -1,6 +1,7 @@
 package com.cowax.cowaxpack;
 
 import com.atsuishio.superbwarfare.api.event.RegisterContainersEvent;
+import com.atsuishio.superbwarfare.data.CustomData;
 import com.cowax.cowaxpack.init.CowaxSounds;
 import com.cowax.cowaxpack.init.ModEntities;
 import com.cowax.cowaxpack.init.ModItems;
@@ -22,6 +23,8 @@ public class CowaxPack {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public CowaxPack(IEventBus bus, ModContainer container) {
+        CustomData.INSTANCE.load();
+
         CowaxSounds.REGISTRY.register(bus);
         ModItems.REGISTRY.register(bus);
         ModEntities.REGISTRY.register(bus);

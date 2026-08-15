@@ -1,8 +1,6 @@
 {
   "item_group.cowaxpack.title": "CowaxPack",
   "item.cowaxpack.parachute": "Парашют",
-  "item.cowaxpack.zenit_2c6_spawn_item": "2С6 Тунгуска (Спавнер)",
-  "item.cowaxpack.fv_spawn_item": "FV4005 (Спавнер)",
   "entity.cowaxpack.zenit_2c6": "2С6 Тунгуска",
   "entity.cowaxpack.fv": "FV4005",
   "superbwarfare.entry.vehicle.zenit_2c6": "2С6 Тунгуска",
