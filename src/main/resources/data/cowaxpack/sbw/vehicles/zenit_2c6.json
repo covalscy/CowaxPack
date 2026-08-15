@@ -244,9 +244,6 @@
             },
             "ShootPos": {
                 "Transform": "Barrel",
-                "Directions": [
-                    "Barrel"
-                ],
                 "Positions": [
                     [
                         -2.3,
@@ -288,6 +285,16 @@
                         0,
                         4.4
                     ]
+                ],
+                "Directions": [
+                    "Barrel",
+                    "Barrel",
+                    "Barrel",
+                    "Barrel",
+                    "Barrel",
+                    "Barrel",
+                    "Barrel",
+                    "Barrel"
                 ],
                 "BoundUpWithAmmoAmount": true,
                 "ViewDirection": "Barrel"
