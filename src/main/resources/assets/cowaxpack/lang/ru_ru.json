@@ -2,6 +2,7 @@
   "item_group.cowaxpack.title": "CowaxPack",
   "item.cowaxpack.parachute": "Парашют",
   "entity.cowaxpack.zenit_2c6": "2С6 Тунгуска",
+  "entity.cowaxpack.fv": "FV4005",
   "superbwarfare.entry.vehicle.zenit_2c6": "2С6 Тунгуска",
   "superbwarfare.page.vehicle.zenit_2c6_1": "$(thing)2С6 Тунгуска$() - это зенитный ракетно-пушечный комплекс с двумя 30мм пушками и возможностью запуска ПТУР. Может перевозить 5 членов экипажа и обеспечивает отличную противовоздушную оборону.",
   "superbwarfare.page.vehicle.zenit_2c6_2": "Требует минимум 4 x 3 x 3 пространства для размещения.",
