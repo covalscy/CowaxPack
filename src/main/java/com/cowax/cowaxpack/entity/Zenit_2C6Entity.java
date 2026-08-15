@@ -12,7 +12,7 @@ import software.bernie.geckolib.animation.RawAnimation;
 
 public class Zenit_2C6Entity extends GeoVehicleEntity {
 
-    public Zenit_2C6Entity(EntityType<Zenit_2C6Entity> pEntityType, Level pLevel) {
+    public Zenit_2C6Entity(EntityType<? extends GeoVehicleEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -20,22 +20,6 @@ public class Zenit_2C6Entity extends GeoVehicleEntity {
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
                 .custom((source, damage) -> getSourceAngle(source, 0.4f) * damage);
-    }
-
-    @Override
-    public void baseTick() {
-        super.baseTick();
-    }
-
-    @Override
-    public net.minecraft.world.InteractionResult interact(net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand) {
-        net.minecraft.world.InteractionResult result = super.interact(player, hand);
-        if (result == net.minecraft.world.InteractionResult.PASS && !player.isShiftKeyDown() && this.canAddPassenger(player)) {
-            if (player.level().isClientSide()) {
-                return net.minecraft.world.InteractionResult.sidedSuccess(true);
-            }
-        }
-        return result;
     }
 
     private PlayState cannonShootPredicate(AnimationState<Zenit_2C6Entity> event) {

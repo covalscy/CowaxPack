@@ -1,6 +1,8 @@
 {
   "item_group.cowaxpack.title": "CowaxPack",
   "item.cowaxpack.parachute": "降落伞",
+  "item.cowaxpack.zenit_2c6_spawn_item": "2C6 通古斯卡生成物品",
+  "item.cowaxpack.fv_spawn_item": "FV4005 生成物品",
   "entity.cowaxpack.zenit_2c6": "2C6 通古斯卡",
   "entity.cowaxpack.fv": "FV4005",
   "superbwarfare.entry.vehicle.zenit_2c6": "2C6 通古斯卡",
