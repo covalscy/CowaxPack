@@ -175,7 +175,7 @@
         "Cannon": {
             "DefaultFireMode": "Auto",
             "AvailableFireModes": "Auto",
-            "Projectile": "cowaxpack:zenit_cannon_shell",
+            "Projectile": "superbwarfare:small_cannon_shell",
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
             "DefaultZoom": 3,
             "RPM": 1050,

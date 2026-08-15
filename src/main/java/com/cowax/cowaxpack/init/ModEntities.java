@@ -3,7 +3,6 @@ package com.cowax.cowaxpack.init;
 import com.cowax.cowaxpack.CowaxPack;
 import com.cowax.cowaxpack.entity.FvEntity;
 import com.cowax.cowaxpack.entity.Zenit_2C6Entity;
-import com.cowax.cowaxpack.entity.projectile.ZenitCannonShellEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -29,13 +28,6 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-
-    public static final DeferredHolder<EntityType<?>, EntityType<ZenitCannonShellEntity>> ZENIT_CANNON_SHELL = register("zenit_cannon_shell",
-            EntityType.Builder.<ZenitCannonShellEntity>of(ZenitCannonShellEntity::new, MobCategory.MISC)
-                    .setTrackingRange(64)
-                    .setUpdateInterval(1)
-                    .noSave()
-                    .sized(0.25f, 0.25f));
 
     private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(name));
